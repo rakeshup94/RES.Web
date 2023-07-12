@@ -4,47 +4,248 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RES.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+
+    @RenderSection("Seo", required: false)
+
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="~/img/favicon.png">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="~/style.css">
+    <link rel="stylesheet" type="text/css" href="~/zingbox-icon.css">
+
+    <!-- wow -->
+    <link rel="stylesheet" href="~/includes/cdn.jsdelivr.net/gh/daneden/animate.css-v3.1.0/animate.min.css">
+    <script src="~/includes/cdn.jsdelivr.net/gh/matthieua/WOW-1.0.1/dist/wow.min.js"></script>
+
+    <!-- swiper -->
+    <!--  <link rel="stylesheet" href="assets/includes/unpkg.com/swiper-9.3.2/swiper-bundle.min.css"/>
+      <script src="assets/includes/unpkg.com/swiper-9.3.2/swiper-bundle.min.js"></script>-->
+    <!-- owl-carousel -->
+    <link rel="stylesheet" href="~/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/owlcarousel/assets/owl.theme.default.min.css">
+    <script src="~/includes/code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/js/owlcarousel.js"></script>
+    @RenderSection("Styles", required: false)
+
+
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">RES.Web</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<body class="sidebar-right header-style-1 header-fixed">
+    <div id="wrapper" class="animsition">
+        <div id="page" class="">
+            <!-- Header Wrap -->
+            <div id="site-header-wrap">
+                <!-- Header -->
+                <header id="site-header">
+                    <div id="site-header-inner" class="container-fluid">
+                        <div class="wrap-inner style-2 clearfix">
+                            <div>
+                                <a asp-area="" asp-page="/index" rel="home" class="main-logo">
+                                    <img src="~/img/logo.png" alt="Zingbox" data-retina="~/img/logo.png">
+                                </a>
+                            </div>
+                            <div class="mobile-button">
+                                <span></span>
+                            </div><!-- /.mobile-button -->
+                            
+                            <nav id="main-nav" class="main-nav">
+                                <ul id="menu-primary-menu" class="menu">
+                                    <li class="menu-item menu-item-has-children">
+                                        <a class="" asp-area="" asp-page="/index">Home</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a class="down" href="">About Us</a>
+                                        <ul class="sub-menu ">
+
+                                            <li class="menu-item">                                              
+                                                <a asp-area="" asp-page="/company">Our Company</a>
+                                            </li>
+                                            <li class="menu-item"><a asp-area="" asp-page="/who-we-are">Who we are</a></li>
+                                            <li class="menu-item"><a asp-area="" asp-page="/our-team">Our Team</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a class="down" href="">Products</a>
+                                        <ul class="sub-menu ">
+
+                                            <li class="menu-item">                                              
+                                                <a asp-area="" asp-page="/products">Products</a>
+                                            </li>
+                                            <li class="menu-item"><a asp-area="" asp-page="/product-application">Product Application</a></li>
+                                            
+
+                                        </ul>
+                                    </li>
+                                   
+                                    <li class="menu-item menu-item-has-children">
+                                        <a asp-area="" asp-page="/services">Services</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a asp-area="" asp-page="/research-and-development">R & D </a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a asp-area="" asp-page="/career">Career</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a asp-area="" asp-page="/contacts">Contact Us</a>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                            <!-- /#main-nav -->
+                            <div class="header-phone">
+                                <div class="socical-icon">
+                                    <div class="icon"></div>
+                                    <div class="content">
+                                        <div class="call-us"><span>Call Us</span></div>
+                                        <a href="#" title="">
+                                            040-42616355
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="header-get-a-quote">
+                                <a asp-area="" asp-page="/contacts" class="header-get-a-quote-icon">Mail</a>
+                                <!-- <button class="header-get-a-quote-icon" >Get a Quote</button> -->
+                            </div><!-- /#header-get-a-quote -->
+                        </div><!-- /.wrap-inner -->
+                    </div><!-- /#site-header-inner -->
+                </header>
+
+                <!-- /#site-header -->
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <!-- #site-header-wrap -->
+   
+ 
+                <div id="main-content-home" class="site-main clearfix">
+            @RenderBody()        
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - RES.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+                <!-- Footer -->
+                <footer id="footer" class="style-1 clearfix">
+                    <img class="bg-right" src="~/img/bg-footer-2.png" alt="Image">
+                    <div id="footer-widgets" class="container">
+                        <div class="row ">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="widget widget_text">
+                                    <div class="textwidget">
+                                        <img src="~/img/logo.png" alt="Image" style="background-color: #fff; padding: 10px; border-radius: 10px;">
+                                        <p class="margin-bottom-15">Powering Defence since 1985….. </p>
+                                        <div class="footer-socials">
+                                            <div class="inner">
+                                                <span class="icons">
+                                                    <a class="active" href="#"><i class="fa fa-facebook-square"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                                    <a href="#"><i class="fa fa-linkedin"></i></a>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+                                                </span>
+                                            </div>
+                                        </div><!-- /.footer-socials -->
+                                    </div>
+                                </div><!-- /.widget_text -->
+                                <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="0"></div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6">
+                                <div class="themesflat-spacer clearfix" data-desktop="10" data-mobile="0" data-smobile="50"></div>
+                                <div class="widget widget_services">
+                                    <h3 class="widget-title margin-bottom-30">Useful Links</h3>
+                                    <ul class="service-list">
+                                    <li><a asp-area="" asp-page="/company">About us</a></li>
+                                    <li><a asp-area="" asp-page="/awards">Awards</a></li>
+                                    <li><a asp-area="" asp-page="/products">Products</a></li>
+                                    <li><a asp-area="" asp-page="/career">Career</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-6">
+                                <div class="themesflat-spacer clearfix" data-desktop="10" data-mobile="0" data-smobile="50"></div>
+                                <div class="widget widget_services">
+                                    <h3 class="widget-title margin-bottom-30">Useful Links</h3>
+                                    <ul class="service-list">
+                                    <li><a asp-area="" asp-page="/our-team">Management</a></li>
+                                    <li><a asp-area="" asp-page="/services">Services</a></li>
+                                    <li><a asp-area="" asp-page="/contacts">Contact Us</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                         
+                        </div><!-- /.themesflat-row -->
+                    </div><!-- /#footer-widgets -->
+                </footer>
+
+                <!-- /#footer -->
+                <!-- Bottom -->
+                <div id="bottom" class="clearfix has-spacer">
+                    <div id="bottom-bar-inner" class="container">
+                        <div class="bottom-bar-inner-wrap">
+                            <div class="bottom-bar-content text-center">
+                                <div id="copyright">
+                                    <a class="margin-right-3" href="#">© Renewable Energy Systems Ltd. </a>
+                                    <span class="text">2023 |  All Rights Reserved </span>
+                                </div>
+                            </div><!-- /.bottom-bar-content -->
+
+
+                        </div><!-- /.bottom-bar-inner-wrap -->
+                    </div><!-- /#bottom-bar-inner -->
+                </div>
+                <!-- /#bottom -->
+     </div>
+      </div>
+
+    <a id="scroll-top" class="">
+        <div class="top-wrap">
+            <button type="button" class="go-top-button">
+                <i class="fa fa-angle-double-up"></i>
+                <!--	<i class="bi bi-chevron-double-up"></i>-->
+
+            </button>
+        </div>
+
+
+    </a>
+
+    <!-- Javascript -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/animsition.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/countto.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/jquery.cookie.js"></script>
+    <script src="~/js/shortcodes.js"></script>
+    <script src="~/js/main.js"></script>
+
+    <!-- Revolution Slider -->
+    <script src="~/includes/rev-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/includes/rev-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/js/rev-slider.js"></script>
+    <!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/includes/rev-slider/js/extensions/revolution.extension.video.min.js"></script>
+
+    <!-- WOW -->
+    <script src="~/js/wow.js"></script>
+
+    <!-- SWIPER -->
+    <!--<script src="~/js/swiper.js"></script>-->
+    <!-- <script src="img.js"></script> -->
 
     @RenderSection("Scripts", required: false)
+    
 </body>
 </html>
