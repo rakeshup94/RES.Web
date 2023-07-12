@@ -1323,11 +1323,38 @@ body.page #main-content {
 
 
 /* Header Baner */
-#header-banner {
-  background-image: url("img/page-banner/about-banner.jpg");
+#header-banner { 
   height: 400px;
 }
+.award-banner {
+    background-image: url("img/page-banner/award-banner.jpg");
+   
+}
 
+.aboutus-banner {
+    background-image: url("img/page-banner/aboutus-banner.jpg");
+}
+.career-banner {
+    background-image: url("img/page-banner/career-banner.jpg");
+}
+.contact-banner {
+    background-image: url("img/page-banner/contact-banner.jpg");
+}
+.ourteam-banner {
+    background-image: url("img/page-banner/ourteam-banner.jpg");
+}
+.products-banner {
+    background-image: url("img/page-banner/products.jpg");
+}
+.R-and-d-banner {
+    background-image: url("img/page-banner/R-and-d-banner.jpg");
+}
+.service-banner {
+    background-image: url("img/page-banner/service-banner.jpg");
+}
+.who-we-are-banner {
+    background-image: url("img/page-banner/who-we-are-banner.jpg");
+}
 #header-banner::after {
   background-color: rgba(0,0,0,0.5);
  height: 400px;
