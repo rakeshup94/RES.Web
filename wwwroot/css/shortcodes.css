@@ -1440,7 +1440,7 @@
 .style-2 .question {
   background-color: #272974;
   position: relative;
-  margin-top: -100px;
+  margin-top: 0px;
   border-radius: 5px;
 }
 .img-left-question {
@@ -1457,7 +1457,7 @@
 }
 .style-2 .themesflat-headings.question .heading-shadown-text {
   top: 29%;
-  left: 27.3%;
+  left: 9.3%;
 }
 .style-2 .themesflat-headings.question {
   padding:  131px 0 291px 0;
@@ -1493,10 +1493,13 @@
   margin: 0;
   padding: 0;
 }
-.style-2  .row-question-slider .box-question img {
-  padding: 57px 0 13px 0 !important;
-  margin: 0 0 0 -10px;
-}
+    .style-2 .row-question-slider .box-question img {
+        padding: 57px 0 13px 0 !important;
+        margin: 0 0 0 -10px;
+        position: relative;
+        left: 43%;
+        max-width: 90px
+    }
 .style-2 .row-question-slider .box-question .fa-quote-left {
   font-size: 14px;
   padding: 9px 9px !important;
