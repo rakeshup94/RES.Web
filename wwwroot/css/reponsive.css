@@ -1109,8 +1109,8 @@
   @media only screen and (max-width: 530px) {
 	.box-team .box,
 	 .box-team.active .box {
-		padding-left: 20% !important;
-		padding-right: 20% !important;
+		padding-left: 1% !important;
+		padding-right: 1% !important;
 		left: 15% !important;
 	}
 	.box-team .box.box2 {

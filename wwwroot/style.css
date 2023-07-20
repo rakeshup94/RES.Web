@@ -651,23 +651,18 @@ h2 {
 
 
 
-h4 {
-
-  color: #565872;
+h4 {  
   font-weight: 400;
 }
 
-h5 {
-
-  color: #ffffff;
+h5 {  
   font-weight: 400;
   line-height: 1;
   padding: 100px 0 35px 7px;
 }
 
-h6 {
-  
-  color: #191919;
+h6 { 
+ 
   font-weight: 400;
   line-height: 1;
 }
@@ -680,16 +675,16 @@ h2 {
   font-size: 54px;
 }
 h3 {
-  font-size: 20px;
+  font-size: 28px;
 } 
 h4 {
-  font-size: 15px;
+  font-size: 20px;
 } 
 h5 {
-  font-size: 72px;
+  font-size: 16px;
 } 
 h6 {
-  font-size: 47px;
+  font-size: 14px;
 } 
 
 h1 a,
@@ -2772,4 +2767,7 @@ body.page #main-content {
 
 .text-black {
     color: #1F242C !important
+}
+.blue-light-bg {
+    background-color: #deeffd
 }
