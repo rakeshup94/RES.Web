@@ -1080,14 +1080,15 @@
   background-color: #ff7029;
 }
 
-.box-work .text-wrap .heading {
-  font-family: "Jost", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  padding-top: 44px;
-  padding-bottom: 14px;
-}
+    .box-work .text-wrap .heading {
+        font-family: "Jost", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        padding-top: 44px;
+        padding-bottom: 14px;
+        line-height: 1.5;
+    }
 .box-work .text-wrap .sub-heading {
   padding: 0 15px 9px 15px;
 }
@@ -2397,20 +2398,22 @@
 .project-detail-content{
   position: relative;
 }
-.project-detail-content .top-information {
-  display: flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    width: 90.5%;
-    background-color: #272974;
-    padding: 33px 0px 15px 43px;
-    z-index: 10;
-    position: absolute;
-    bottom: -17%;
-    left: 5%;
-    border-bottom: 5px solid #d9534f;
-    color: #fff;
+    .project-detail-content .top-information {
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        width: 100%;
+        background-color: #272974;
+        padding: 33px 0px 15px 43px;
+        z-index: 10;
+        position: absolute;
+        bottom: -17%;
+        left: 0%;
+        border-bottom: 5px solid #d9534f;
+        color: #fff;
+        top: -200px;
+    
 }
 .project-detail-content h2 {
   color: #1F242C;
