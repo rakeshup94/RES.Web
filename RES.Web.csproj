@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\our-team.cshtml~RF243626d0.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\includes\unpkg.com\swiper\" />
   </ItemGroup>
 

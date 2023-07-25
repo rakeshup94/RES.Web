@@ -33,9 +33,10 @@
   background-color: #272974 !important;
 }
 .custom2 .tp-bullet {
-  border: 2px solid #fff;
-   border-radius: 50%;
- }
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: none
+}
  .custom2 .tp-bullet:hover,
  .custom2 .tp-bullet.selected {
    background-color: #fff !important;
@@ -47,6 +48,7 @@
   border-radius: 50%;
   width: 75px !important;
   height: 75px !important;
+  display:none
 }
 .tp-leftarrow.tparrows {
   margin-left: 15px;
@@ -82,8 +84,7 @@
 .rev_slider span.heading-tittle {
   letter-spacing: 0px !important;
 }
-.rev_slider .tittle1 {
-  font-family: "Teko", sans-serif;
+.rev_slider .tittle1 { 
   color: #fff;
   letter-spacing: -1.5px !important;
 }
@@ -171,13 +172,13 @@
   -webkit-text-fill-color: transparent;
 }
 .themesflat-headings.style-1 .heading {
-  font-size: 72px;
+  font-size: 56px;
   line-height: 68px;
   letter-spacing: -1.5px !important;
   color: #fff;
 }
 .themesflat-headings.style-1 .sub-heading {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 30px;
   letter-spacing: 0px !important;
   margin-top: 12px;
@@ -196,7 +197,7 @@
   letter-spacing: -1.5px !important;
 }
 .themesflat-headings.style-2 .sub-heading {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 30px;
   margin-top: 12px;
   color: #000;
@@ -471,16 +472,16 @@
 }
 
 .box-service .service-read-more {
- color: #272974;
-	    position: fixed;
+    color: #5456a3;
+    position: fixed;
     bottom: 14px;
 }
 @media(max-width:767px){
-	.box-service .service-read-more {
- color: #272974;
-	    position: inherit;
-    bottom: 14px;
-}
+    .box-service .service-read-more {
+        color: #5456a3;
+        position: inherit;
+        bottom: 14px;
+    }
 }
 .box-service .service-read-more:hover {
   color: #ff7029;
@@ -595,7 +596,7 @@
 
 .row-experiences-bottom {
   margin: 0px;
-  background-color: #272974;
+  background-color: none;
   padding: 50px 50px 46px 36px;
   position: relative;
   top: 511px;
@@ -680,11 +681,11 @@
 
     .box-team .box {
         text-align: center;
-        background-color: #fff;
+        background-color: rgb(256 256 256 / 96%);
         margin-top: -33px;
         position: absolute;
-        padding: 30px 10px 25px 8px;
-        left: 9%;
+        padding: 18px 10px 18px 8px;
+        left: 0%;
         border-radius: 5px;
         border-bottom: 3px solid #fff;
         box-shadow: 0 10px 30px rgb(0 0 0 / 7%);
@@ -693,7 +694,7 @@
         -ms-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
-        min-width: 318px;
+        min-width: 100%;
         min-height: 148px;
     }
 
@@ -704,7 +705,7 @@
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-	min-width: 232px;
+	min-width: 100%;
 }
 
 .box-team:hover .img-overlay {
@@ -724,17 +725,18 @@
   transition: all 0.5s ease;
 }
 
-.box-team:hover .box {
-  padding-bottom: 75px;
-  padding-top: 35px;
-  margin-top: -91px;
-  border-bottom: 3px solid #ff7029;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
+    .box-team:hover .box {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-top: -390px;
+        border-bottom: 3px solid #ff7029;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        min-height: 390px
+    }
 
 
 .box-team:hover .box .icon-social-team {
@@ -753,19 +755,21 @@
 	font-size: 18px;
 }
 
-.box-team .box .icon-social-team {
-  position: absolute;
-  bottom: -25px;
-  opacity: 0;
-  padding: 20px 0;
-  overflow: hidden;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-	left: 40%;
-}
+    .box-team .box .icon-social-team {
+        position: absolute;
+        bottom: -25px;
+        opacity: 0;
+        padding: 10px;
+        overflow: hidden;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        left: 0%;
+        font-size: 14px;
+        top: 23%;
+    }
 
 .box-team .box.box2 .icon-social-team {
   left: 20%;
@@ -2750,10 +2754,14 @@
 .experience-left .title .active {
     background-color: #272974;
     border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid #ff7029;
+    position: relative;
+    z-index: 1;
+    top: 1px;
 }
 .experience-left .title li span {
   color: #000;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
 }
 .experience-left .title .active span {

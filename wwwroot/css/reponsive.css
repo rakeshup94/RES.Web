@@ -752,7 +752,7 @@
 	  margin-bottom: 100px;
 	}
 	.box-team:hover .box {
-		margin-top: -125px;
+		margin-top: -390px;
 	}
 	.box-team .box.box2,
 	.box-team.active .box {
@@ -1111,7 +1111,7 @@
 	 .box-team.active .box {
 		padding-left: 1% !important;
 		padding-right: 1% !important;
-		left: 15% !important;
+		left: 0% !important;
 	}
 	.box-team .box.box2 {
 		padding-left: 18% !important;

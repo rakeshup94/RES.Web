@@ -535,7 +535,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.4;
   color: inherit;
 }
 
@@ -5500,10 +5500,11 @@ button.close {
   padding: 15px;
   border-bottom: 1px solid #eceeef;
 }
-.modal-header .close {
-    padding: 0.2rem 0.2rem;
-    margin: -1rem -1rem -1rem auto;
-}
+    .modal-header .close {
+        padding: 0.2rem 0.2rem;
+        margin: -1rem -1rem -1rem auto;
+        overflow: hidden;
+    }
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
