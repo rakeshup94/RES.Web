@@ -2777,3 +2777,8 @@ body.page #main-content {
     box-shadow: 2px 2px 3px #9d9797;
     padding: 15px !important;
 }
+@media(max-width:575px) {
+    .p-0-mobile {
+        padding: 0px !important
+    }
+}
