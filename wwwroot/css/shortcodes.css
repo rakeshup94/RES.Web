@@ -1064,11 +1064,11 @@
 .box-work .text-wrap {
   text-align: center;
   position: relative;
-  padding: 4px 0 40px 3px;
+  padding: 4px 0 14px 3px;
   margin: -30px 21px 0 0;
   background-color: #fff;
   box-shadow: 0 10px 30px rgb(0 0 0 / 7%);
-	min-height: 198px;
+	min-height: 226px;
 }
 .box-work .text-wrap::before {
   content: "";

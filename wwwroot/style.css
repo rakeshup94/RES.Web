@@ -671,7 +671,7 @@ h6 {
 /* padding: 15px 0 15px 5px; */
 
 h1 {
-  font-size: 72px;
+  font-size: 65px;
 }
 h2 {
   font-size: 54px;
@@ -1370,23 +1370,38 @@ body.page #main-content {
   z-index: 10;
 }
 #header-banner
-  #header-banner-inner
-  .header-banner-inner-wrap
-  .blog-standar-start1 {
-  letter-spacing: -1.5px;
-	  color: #fff;	
+#header-banner-inner
+.header-banner-inner-wrap
+.blog-standar-start1 {
+    letter-spacing: -1.5px;
+    color: #fff;
     position: relative;
-    z-index: 2;  
+    z-index: 2;
     text-align: center;
+   
 }
-
+.heading-top {
+    background: rgb(0, 0, 0, 65%);
+    padding: 0px 15px;
+    margin: 0px auto;
+    border-radius: 10px;   
+}
+@media(max-width:767px){
+    .heading-top {
+        background: rgb(0, 0, 0, 65%);
+        padding: 15px 15px;
+        margin: 0px auto;
+        border-radius: 10px;      
+        display: inline-table;
+    }
+}
 /* Absolute */
 .site-header-absolute #site-header-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 /* Blog Post

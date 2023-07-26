@@ -10,7 +10,7 @@ $(document).ready(function(){
             margin:30,
             nav:true,
             autoplay:true,
-            autoplayTimeout:3000,
+            autoplayTimeout:1500,
             navText:
                 [
                     "<i class='fa fa-arrow-left'></i>",
