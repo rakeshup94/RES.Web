@@ -82,11 +82,14 @@
   display: none;
 }
 .rev_slider span.heading-tittle {
-  letter-spacing: 0px !important;
+    letter-spacing: 0px !important;
+    text-shadow: 5px 5px 2px #000;
+    color: #aae5fd;
 }
-.rev_slider .tittle1 { 
-  color: #fff;
-  letter-spacing: -1.5px !important;
+.rev_slider .tittle1 {
+    color: #fff;
+    letter-spacing: -1.5px !important;
+    text-shadow: 5px 5px 2px #000;
 }
 .rev_slider .line {
     background-color: rgba(256,256,256,0.3);
