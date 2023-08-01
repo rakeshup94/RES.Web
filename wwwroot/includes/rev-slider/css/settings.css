@@ -118,18 +118,25 @@ website:   	http://www.themepunch.com
 .tp-overflow-hidden { overflow:hidden;}
 
 .tp-simpleresponsive img,
-.rev_slider img{
-	max-width:none !important;
+.rev_slider img {
+	max-width: auto !important;
 	-moz-transition: none;
 	-webkit-transition: none;
 	-o-transition: none;
 	transition: none;
-	margin:0px;
-	padding:0px;
-	border-width:0px;
-	border:none;
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+	border: none;
+	min-width: 100%
 }
-	
+	@media(max-width:767px){
+		.tp-simpleresponsive img,
+		.rev_slider img {
+			max-width: none !important;
+			
+		}
+	}
 .rev_slider .no-slides-text{
 	font-weight:bold;
 	text-align:center;
