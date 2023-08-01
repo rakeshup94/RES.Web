@@ -940,16 +940,29 @@ body.page #main-content {
 }
 #main-nav > ul > li {
   float: left;
-  padding: 35px 20px 35px 14px !important;
+  padding: 35px 10px 35px 14px !important;
+}
+@media(min-width:1366px){
+    #main-nav > ul > li {
+        float: left;
+        padding: 35px 20px 35px 14px !important;
+    }
 }
     #main-nav > ul > li > a {
         display: block;
-        font-size: 19px;
+        font-size: 17px;
         font-weight: 700;
         color: #5456a3;
         position: relative;
         line-height: 23px;
     }
+@media(min-width:1400px) {
+    #main-nav > ul > li > a {       
+        font-size: 19px;
+       
+    }
+}
+
 #main-nav ul li .active::after,
 #main-nav ul li .active {
   color: #57b33c  !important;
@@ -1218,9 +1231,10 @@ body.page #main-content {
   font-weight: 700;
 }
 
-.header-phone .socical-icon .call-us {
-  line-height: 17px;
-}
+    .header-phone .socical-icon .call-us {
+        line-height: 17px;
+        font-size: 14px;
+    }
 
 #header-get-a-quote a {
   border: 1px;
@@ -2784,12 +2798,13 @@ body.page #main-content {
     color: #1F242C !important
 }
 .blue-light-bg {
-    background-color: #deeffd
+    background-color: #eee
 }
 .tab-content-wrap {
     border: solid 1px #ccc;
     box-shadow: 2px 2px 3px #9d9797;
     padding: 15px !important;
+    min-height: 148px;
 }
 @media(max-width:575px) {
     .p-0-mobile {
