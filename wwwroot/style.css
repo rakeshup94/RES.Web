@@ -1382,6 +1382,11 @@ body.page #main-content {
   text-align: center;
   z-index: 10;
 }
+@media(max-width:767px) {
+    .header-banner-inner-wrap {
+        padding: 65px 0 0 0;        
+    }
+}
 #header-banner
 #header-banner-inner
 .header-banner-inner-wrap
@@ -1391,7 +1396,15 @@ body.page #main-content {
     position: relative;
     z-index: 2;
     text-align: center;
-   
+    font-size: 65px;
+}
+@media(max-width:767px) {
+    #header-banner
+    #header-banner-inner
+    .header-banner-inner-wrap
+    .blog-standar-start1 {      
+        font-size: 55px;
+    }
 }
 .heading-top {
     background: rgb(0, 0, 0, 65%);
@@ -1430,11 +1443,12 @@ body.page #main-content {
 .hentry .post-content-wrap {
   padding: 28px 0px 0px 0px;
 }
-.hentry .post-content-wrap ul {
-  margin: 0;
-  padding-bottom: 0px;
-	padding-left: 22px;
-}
+    .hentry .post-content-wrap ul {
+        margin: 0;
+        padding-bottom: 0px;
+        padding-left: 38px;
+        padding-right: 12px;
+    }
 .hentry .post-content-wrap ul li {
   padding-bottom: 6px;
 	list-style-type: disclosure-closed;
@@ -2811,4 +2825,11 @@ body.page #main-content {
         padding: 0px !important
     }
 }
-
+@media(min-width:992px) {
+    .mb-0-lg {
+        margin-bottom: 0px !important
+    }
+}
+.card-border{
+    border:solid 1px #ff7029 !important
+}
