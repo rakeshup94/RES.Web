@@ -2833,3 +2833,66 @@ body.page #main-content {
 .card-border{
     border:solid 1px #ff7029 !important
 }
+
+.box-team .box .icon-social-team {
+    position: absolute;
+    bottom: -25px;
+    opacity: 0;
+    padding: 10px;
+    overflow: hidden;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    left: 0%;
+    font-size: 14px;
+    top: 23%;
+}
+
+.box-team .box.box2 .icon-social-team {
+    left: 20%;
+}
+
+.box-team .box .icon-social-team a {
+    padding: 0 3px;
+}
+
+.box-team .box .icon-social-team i {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+ .icon-social-team i:hover {
+        background-color: #272974;
+        color: #fff;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+.icon-social-team .fa {
+    border-radius: 50%;
+    background-color: #f0f4f9;
+}
+
+.icon-social-team .fa-facebook {
+    padding: 10px 13px;
+}
+
+ .icon-social-team .fa-twitter {
+    padding: 10px 10px;
+}
+
+.icon-social-team .fa-instagram {
+    padding: 10px 11px;
+}
+
+.icon-social-team .fa-linkedin {
+    padding: 10px 11px;
+}
