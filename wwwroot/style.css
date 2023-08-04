@@ -1364,6 +1364,9 @@ body.page #main-content {
 .ethics-banner {
     background-image: url("img/page-banner-1/ethics-banner.jpg");
 }
+.qualitypolicy-banner {
+    background-image: url("img/page-banner-1/qualitypolicy-banner.jpg");
+}
 #header-banner::after {
   background-color: rgba(0,0,0,0.6);
  height: 300px;
