@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "jquery-validation-cjs@1.0.0",
+      "destination": "wwwroot/lib/jquery-validation-cjs/",
+      "files": [
+        "dist/jquery.validate.min.js"
+      ]
+    },
+   
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    }
+  ]
+}

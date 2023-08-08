@@ -51,6 +51,9 @@ namespace RES.Web
             {
                 endpoints.MapRazorPages();
             });
+
+
+
         }
     }
 }
