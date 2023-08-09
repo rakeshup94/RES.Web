@@ -72,9 +72,13 @@ namespace RES.Web.Pages
                 _mail.Body = body;
                 await mailSrv.SendEmailAsync(_mail);
                 await ThanksMail(CandidateModel.Name, CandidateModel.Email);
+
+            }
+            else
+            {
                 return Page();
             }
-            return RedirectToPage();
+            return RedirectToPage("~/Thanks");
         }
 
 

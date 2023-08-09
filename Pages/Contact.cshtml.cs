@@ -40,7 +40,7 @@ namespace RES.Web.Pages
         public async Task<IActionResult> OnPostSales()
         {
             ModelState.Clear();
-            if (!TryValidateModel(SaleModel))
+            if (TryValidateModel(SaleModel))
             {
                 string body = string.Empty;
                 string wwwRootPath = _hostEnvironment.WebRootPath;
@@ -61,15 +61,20 @@ namespace RES.Web.Pages
                 _mail.Body = body;
                 await mailSrv.SendEmailAsync(_mail);
                 await ThanksMail(SaleModel.Name, SaleModel.Email);
+
+            }
+            else
+            {
                 return Page();
             }
-            return RedirectToPage();
+
+            return RedirectToPage("~/Thanks");
         }
 
         public async Task<IActionResult> OnPostQuery()
         {
             ModelState.Clear();
-            if (!TryValidateModel(QueryModel))
+            if (TryValidateModel(QueryModel))
             {
                 string body = string.Empty;
                 string wwwRootPath = _hostEnvironment.WebRootPath;
@@ -89,9 +94,13 @@ namespace RES.Web.Pages
                 _mail.Body = body;
                 await mailSrv.SendEmailAsync(_mail);
                 await ThanksMail(QueryModel.Name, QueryModel.Email);
+            }
+            else
+            {
                 return Page();
             }
-            return RedirectToPage();
+
+            return RedirectToPage("~/Thanks");
         }
 
 
