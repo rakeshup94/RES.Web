@@ -2,21 +2,31 @@
 
 namespace RES.Web.Models
 {
-    public class Customer
-    {
-        public int Id { get; set; }
-        public int FormId { get; set; }
+	public class Customer
+	{
+		public int FormId { get; set; }
+		public int Id { get; set; }
+		[Required, StringLength(100)]
+		public string Name { get; set; }
 
-        [Required, StringLength(4)]
-        public string Name { get; set; }
+        [Required, StringLength(150)]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; } 
 
-        [Required, StringLength(5)]
-        public string Email { get; set; }
-        [Required, StringLength(5)]
+        [Required(ErrorMessage = "You must provide a phone number")]
+        [Display(Name = "Phone No.")]
+        [DataType(DataType.PhoneNumber)]
+        //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+
+
+        [RegularExpression(@"(^[0-9]{10}$)|(^\+[0-9]{2}\s+[0-9]{2}[0-9]{8}$)|(^[0-9]{3}-[0-9]{4}-[0-9]{4}$)", ErrorMessage = "Not a valid phone number")]
+
+
+
+        [StringLength(13, MinimumLength = 10)]
         public string PhoneNo { get; set; }
         public string Message { get; set; }
 
 
-
-    }
+	}
 }
