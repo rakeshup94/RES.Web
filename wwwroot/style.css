@@ -2899,3 +2899,9 @@ body.page #main-content {
 .icon-social-team .fa-linkedin {
     padding: 10px 11px;
 }
+.field-validation-error {
+    color: #f00;
+    font-size: 12px;
+    position: relative;
+    top: -17px;
+}
