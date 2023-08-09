@@ -90,7 +90,7 @@
                         @using (Html.BeginForm(FormMethod.Post, new { id = "frmSales" }))
                         {
                             @Html.AntiForgeryToken()
-                            @Html.ValidationSummary()
+                        @*    @Html.ValidationSummary()*@
 
                             <input type="hidden" value="1" asp-for="SaleModel!.FormId" />
                             <div class="row">
@@ -135,7 +135,7 @@
                         @using (Html.BeginForm(FormMethod.Post, new { id = "frmQuery" }))
                         {
                             @Html.AntiForgeryToken()
-                            @Html.ValidationSummary()
+                          @*  @Html.ValidationSummary()*@
                             <input type="hidden" value="1" asp-for="QueryModel!.FormId" />
                             <div class="row">
                                 <div class="col-md-6 mb-3">
