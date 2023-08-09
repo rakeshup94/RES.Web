@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using RES.Web.Models;
 using RES.Web.Services.IServices;
+using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace RES.Web.Pages
@@ -39,8 +42,15 @@ namespace RES.Web.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             ModelState.Clear();
-            if (!TryValidateModel(CandidateModel))
+            if (TryValidateModel(CandidateModel))
             {
+
+                MailRequest _mail = new MailRequest();
+                if (CandidateModel.Resume != null)
+                {
+                    _mail.Attachments = new List<IFormFile>();
+                    _mail.Attachments.Add(CandidateModel.Resume);
+                }
                 string body = string.Empty;
                 string wwwRootPath = _hostEnvironment.WebRootPath;
                 string path = Path.Combine(wwwRootPath + "/template/", "emailer-career.html");
@@ -51,13 +61,12 @@ namespace RES.Web.Pages
                 body = body.Replace("{Department}", CandidateModel.Department);
                 body = body.Replace("{Email}", CandidateModel.Email);
                 body = body.Replace("{PhoneNo}", CandidateModel.PhoneNo);
-                body = body.Replace("{Resume}", CandidateModel.Resume);
                 body = body.Replace("{Experience}", CandidateModel.Experience);
                 body = body.Replace("{Education}", CandidateModel.Education);
                 body = body.Replace("{Project}", CandidateModel.Project);
                 body = body.Replace("{Reference}", CandidateModel.Reference);
 
-                MailRequest _mail = new MailRequest();
+
                 _mail.Subject = "For  Career";
                 _mail.ToEmail = _mailSettings.ToCC;
                 _mail.Body = body;
