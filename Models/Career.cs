@@ -6,7 +6,7 @@ namespace RES.Web.Models
     {
 
         [Required, StringLength(50)]
-        public string Designation { get; set; }
+        public string Department { get; set; }
         [Required, StringLength(100)]
         public string Name { get; set; }
         [Required, StringLength(150)]

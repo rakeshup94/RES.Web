@@ -61,11 +61,11 @@
             @using (Html.BeginForm(FormMethod.Post, new { id = "frmCandidate" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.ValidationSummary()
+                @*@Html.ValidationSummary()*@
                 <div class="card-body p-4">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <select asp-for="CandidateModel!.Designation">
+                            <select asp-for="CandidateModel!.Department">
                                 <option>Planning</option>
                                 <option>Quality</option>
                                 <option>Design and development</option>
@@ -74,7 +74,7 @@
                                 <option>Store Finance</option>
                                 <option>Technician</option>
                             </select>
-                            <span asp-validation-for="CandidateModel.Designation"></span>
+                            <span asp-validation-for="CandidateModel.Department"></span>
 
                         </div>
                         <div class="col-md-6 mb-3">

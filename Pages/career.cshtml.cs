@@ -13,9 +13,9 @@ namespace RES.Web.Pages
     public class careerModel : PageModel
     {
 
-		[BindProperty]
-		public Career CandidateModel { get; set; }
-		public void OnGet()
+        [BindProperty]
+        public Career CandidateModel { get; set; }
+        public void OnGet()
         {
         }
 
@@ -43,26 +43,57 @@ namespace RES.Web.Pages
             {
                 string body = string.Empty;
                 string wwwRootPath = _hostEnvironment.WebRootPath;
-                string path = Path.Combine(wwwRootPath + "/template/", "emailer-query.html");
+                string path = Path.Combine(wwwRootPath + "/template/", "emailer-career.html");
                 using (StreamReader reader = new StreamReader(path))
-                //{
-                //    body = reader.ReadToEnd();
-                ////}
-                //body = body.Replace("{Name}", SaleModel.Name);
-                //body = body.Replace("{Email}", SaleModel.Email);
-                //body = body.Replace("{PhoneNo}", SaleModel.PhoneNo);
-                //body = body.Replace("{Message}", SaleModel.Message);
+                {
+                    body = reader.ReadToEnd();
+                }
+                body = body.Replace("{Department}", CandidateModel.Department);
+                body = body.Replace("{Email}", CandidateModel.Email);
+                body = body.Replace("{PhoneNo}", CandidateModel.PhoneNo);
+                body = body.Replace("{Resume}", CandidateModel.Resume);
+                body = body.Replace("{Experience}", CandidateModel.Experience);
+                body = body.Replace("{Education}", CandidateModel.Education);
+                body = body.Replace("{Project}", CandidateModel.Project);
+                body = body.Replace("{Reference}", CandidateModel.Reference);
 
-
-                //MailRequest _mail = new MailRequest();
-                //_mail.Subject = "Sales Query";
-                //_mail.ToEmail = _mailSettings.Mail;
-                //_mail.Body = body;
-                //await mailSrv.SendEmailAsync(_mail);
-                //await ThanksMail(SaleModel.Name, SaleModel.Email);
+                MailRequest _mail = new MailRequest();
+                _mail.Subject = "For  Career";
+                _mail.ToEmail = _mailSettings.ToCC;
+                _mail.Body = body;
+                await mailSrv.SendEmailAsync(_mail);
+                await ThanksMail(CandidateModel.Name, CandidateModel.Email);
                 return Page();
             }
             return RedirectToPage();
         }
+
+
+
+
+
+
+        public async Task ThanksMail(string Name, string Email)
+        {
+            string body = string.Empty;
+            string wwwRootPath = _hostEnvironment.WebRootPath;
+            string path = Path.Combine(wwwRootPath + "/template/", "emailer-thanyou.html");
+            using (StreamReader reader = new StreamReader(path))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{Name}", Name);
+            MailRequest _mail = new MailRequest();
+            _mail.Subject = "Thank you for Contacting Renewable Energy Systems Ltd";
+            _mail.ToEmail = Email;
+            _mail.Body = body;
+            await mailSrv.SendEmailAsync(_mail);
+        }
+
+
+
+
+
+
     }
 }
