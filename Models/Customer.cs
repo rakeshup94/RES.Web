@@ -14,7 +14,7 @@ namespace RES.Web.Models
         public string Email { get; set; }
         [Required, StringLength(5)]
         public string PhoneNo { get; set; }
-        public string Query { get; set; }
+        public string Message { get; set; }
 
 
 
