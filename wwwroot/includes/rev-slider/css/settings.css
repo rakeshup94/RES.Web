@@ -198,11 +198,12 @@ website:   	http://www.themepunch.com
 .rs-toggle-content-active.tp-caption .rs-untoggled-content { display:none;}
 
 .rev_slider .tp-caption,
-.rev_slider .caption 	{ 
-	position:relative;  
-	visibility:hidden; 
+.rev_slider .caption {
+	position: relative;
+	visibility: hidden;
 	white-space: nowrap;
 	display: block;
+	text-align: center;
 }
 
 

@@ -83,13 +83,13 @@
 }
 .rev_slider span.heading-tittle {
     letter-spacing: 0px !important;
-    text-shadow: 5px 5px 2px #000;
-    color: #aae5fd;
+    text-shadow: 4px 3px 2px #000;
+    color: #fff;
 }
 .rev_slider .tittle1 {
     color: #fff;
     letter-spacing: -1.5px !important;
-    text-shadow: 5px 5px 2px #000;
+    text-shadow: 4px 3px 2px #000;
     font-style: italic;
 }
 .rev_slider .line {

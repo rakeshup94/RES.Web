@@ -636,3 +636,12 @@
 .Electrical-Vehicles:before {
   content: url("img/icon/Electrical-Vehicles.png");	
 }
+.target:before {
+    content: url("img/icon/focus.png");
+}
+.goal:before {
+    content: url("img/icon/goals.png");
+}
+.safety:before {
+    content: url("img/icon/safety.png");
+}
