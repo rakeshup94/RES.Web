@@ -513,7 +513,7 @@ input[type="color"] {
   /* color: #5456a3; */
   border: 2px solid rgba(8,76,148,0.2) !important;
     border-radius: 5px;
-  padding: 14px 20px;
+  padding: 6px 20px;
   letter-spacing: 0px;
   background-color: #fff;
   line-height: inherit;
@@ -3087,4 +3087,9 @@ body.page #main-content {
 
 .services-page__single:hover .services-page__single-inner .btn-box a i::before {
     color: #ffffff;
+}
+#upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
 }
