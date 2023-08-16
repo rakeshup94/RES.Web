@@ -68,7 +68,7 @@ namespace RES.Web.Pages
                 return Page();
             }
 
-            return RedirectToPage("~/Thanks");
+            return RedirectToPage("/Thanks");
         }
 
         public async Task<IActionResult> OnPostQuery()
@@ -100,7 +100,7 @@ namespace RES.Web.Pages
                 return Page();
             }
 
-            return RedirectToPage("~/Thanks");
+            return RedirectToPage("/Thanks");
         }
 
 
