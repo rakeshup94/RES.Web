@@ -69,6 +69,7 @@ namespace RES.Web.Pages
 
 
                 _mail.Subject = "For  Career";
+                /// _mail.ToEmail = "rakeshup94@gmail.com";
                 _mail.ToEmail = "hr@resindia.co.in";
                 _mail.Body = body;
                 await mailSrv.SendEmailAsync(_mail);
