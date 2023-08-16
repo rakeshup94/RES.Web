@@ -1374,7 +1374,7 @@ body.page #main-content {
     position: absolute;
     z-index: 1;
     width: 100%;
-    top: 98px;
+    top: 80px;
 }
 
 #header-banner #header-banner-inner a :hover {
