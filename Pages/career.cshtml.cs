@@ -59,6 +59,7 @@ namespace RES.Web.Pages
                     body = reader.ReadToEnd();
                 }
                 body = body.Replace("{Department}", CandidateModel.Department);
+                body = body.Replace("{Name}", CandidateModel.Name);
                 body = body.Replace("{Email}", CandidateModel.Email);
                 body = body.Replace("{PhoneNo}", CandidateModel.PhoneNo);
                 body = body.Replace("{Experience}", CandidateModel.Experience);
