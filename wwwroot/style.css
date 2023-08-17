@@ -677,7 +677,7 @@ h2 {
   font-size: 54px;
 }
 h3 {
-  font-size: 26px;
+  font-size: 24px;
 } 
 h4 {
   font-size: 20px;
@@ -1334,14 +1334,20 @@ body.page #main-content {
 
 /* Header Baner */
 #header-banner { 
-  height: 300px;
+  /*height: 300px;*/
 }
+@media(max-width:767px){
+    #header-banner {
+        height: 100px;
+    }
+}
+
 .award-banner {
     background-image: url("img/page-banner-1/awards-banner.jpg");
 }
 
 .aboutus-banner {
-    background-image: url("img/page-banner-1/about-banner.jpg");
+    background-image: url("img/page-banner/aboutus-banner.jpg");
 }
 .career-banner {
     background-image: url("img/page-banner-1/career-banner.jpg");
@@ -1367,7 +1373,7 @@ body.page #main-content {
 .qualitypolicy-banner {
     background-image: url("img/page-banner-1/qualitypolicy-banner.jpg");
 }
-#header-banner::after {
+/*#header-banner::after {
   background-color: rgba(0,0,0,0.6);
  height: 300px;
     content: "";
@@ -1375,7 +1381,7 @@ body.page #main-content {
     z-index: 1;
     width: 100%;
     top: 80px;
-}
+}*/
 
 #header-banner #header-banner-inner a :hover {
   color: #5456a3;
@@ -2300,7 +2306,8 @@ body.page #main-content {
   right: -2%;
 }
 #footer a {
-  color: #ffffff;
+    color: #ffffff;
+    font-size: 19px;
 }
 #footer a:hover {
   color: #5456a3;
@@ -2325,22 +2332,22 @@ body.page #main-content {
 .service-list {
   color: #ffffff;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
+ 
+  font-size: 17px;
   line-height: 30px;
   margin-bottom: 28px;
   margin-top: 20px;
 }
 #footer h3 {
-  font-family: "Rubik", sans-serif;
+ 
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
   line-height: 30px;
 }
 #footer h4 {
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
+  
+  font-size: 19px;
   font-weight: 500;
   color: #ffffff;
   line-height: 26px;
@@ -2980,7 +2987,7 @@ body.page #main-content {
     text-align: center;
     padding: 67px 20px 20px;
     z-index: 1;
-    min-height: 326px;
+    min-height: 350px;
 }
 @media (min-width: 768px) and (max-width: 1366px) {
     .services-page__single-inner {
@@ -3034,12 +3041,15 @@ body.page #main-content {
 
 .services-page__single:hover .services-page__single-inner h3 {
     color: #ffffff;
+
 }
+
 
 .services-page__single-inner p {
     margin: 0;
     transition: all 200ms linear;
     transition-delay: 0.1s;
+    font-size: 19px;
 }
 
 .services-page__single:hover .services-page__single-inner p {
@@ -3092,4 +3102,7 @@ body.page #main-content {
     opacity: 0;
     position: absolute;
     z-index: -1;
+}
+.infor {
+    font-size:19px
 }

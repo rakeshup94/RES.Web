@@ -101,7 +101,7 @@
         var args = {easing:'easeOutExpo', duration:500};
 
         $('.accordion-item.active').find('.infor-question').show();
-        $('.question-1').on('click', function () {
+        $('.question').on('click', function () {
             if ( !$(this).parent().is('.active') ) {
                 $(this).parent().toggleClass('active')
                     .children('.infor-question').slideToggle(args)
