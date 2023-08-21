@@ -503,6 +503,8 @@
 	}
 	.question-faq .question {
 		padding-left: 5px;
+		font-size: 14px;
+		padding: 5px 0 5px 14px;
 	}
 	.question-faq .question a::after {
 		right: 20px;

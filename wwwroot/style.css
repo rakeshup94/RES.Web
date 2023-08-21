@@ -2999,7 +2999,7 @@ body.page #main-content {
         text-align: center;
         padding: 67px 20px 20px;
         z-index: 1;
-        min-height: 359px;
+        min-height: 403px;
     }
 }
     .services-page__single-inner::before {
