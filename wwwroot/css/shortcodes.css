@@ -1514,7 +1514,7 @@
         border-bottom: 0px;
         margin: 0;
         box-shadow: 0 10px 30px rgb(0 0 0 / 7%);
-        min-height: 560px;
+        min-height: 360px;
         font-size: 19px;
     }
 .style-2 .row-question-slider .box-question p,
@@ -1534,7 +1534,7 @@
   font-size: 14px;
   padding: 9px 9px !important;
   top: 110px;
-  left: 53%;
+  left: 48%;
 }
 .style-2 .row-question-slider .box-question p {
   padding: 0 15px 16px 15px !important;

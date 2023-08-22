@@ -3002,24 +3002,24 @@ body.page #main-content {
         min-height: 403px;
     }
 }
-    .services-page__single-inner::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: #ff7029;
-        transform: scaleX(0.8);
-        opacity: 0;
-        transform-origin: center;
-        transform-style: preserve-3d;
-        -webkit-transition: all 0.4s linear;
-        -o-transition: all 0.4s linear;
-        transition: all 0.4s linear;
-        border-radius: 15px;
-        content: "";
-        z-index: -1;
-    }
+.services-page__single-inner::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #272974;
+    transform: scaleX(0.8);
+    opacity: 0;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    -webkit-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    border-radius: 15px;
+    content: "";
+    z-index: -1;
+}
 
 .services-page__single:hover .services-page__single-inner::before {
     transform: scaleX(1.0);
