@@ -29,8 +29,7 @@ namespace RES.Web.Services
         {
             try
             {
-                //int x = 0; int y = 0;
-                //int ss = 10 / y;
+          
 
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress(_mailSettings.Mail, _mailSettings.DisplayName);
@@ -98,7 +97,6 @@ namespace RES.Web.Services
                     writer.WriteLine(ex.GetType().FullName);
                     writer.WriteLine("Message : " + ex.Message);
                     writer.WriteLine("StackTrace : " + ex.StackTrace);
-
                     ex = ex.InnerException;
                 }
             }
