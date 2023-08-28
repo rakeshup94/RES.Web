@@ -59,6 +59,11 @@ namespace RES.Web.Pages
                 _mail.Subject = "Sales Query";
                 _mail.ToEmail = _mailSettings.Mail;
                 _mail.Body = body;
+
+
+
+                _mail.SourcePath = _hostEnvironment.WebRootPath + "/Exception/";
+
                 await mailSrv.SendEmailAsync(_mail);
                 await ThanksMail(SaleModel.Name, SaleModel.Email);
 

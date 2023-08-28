@@ -27,59 +27,101 @@ namespace RES.Web.Services
 
         public async Task SendEmailAsync(MailRequest mailRequest)
         {
-            MailMessage message = new MailMessage();
-            message.From = new MailAddress(_mailSettings.Mail, _mailSettings.DisplayName);
-            message.To.Add(new MailAddress(mailRequest.ToEmail));
-
-            if (!string.IsNullOrEmpty(_mailSettings.ToCC))
-            {
-                message.CC.Add(new MailAddress(_mailSettings.ToCC));
-            }
-
-            message.Subject = mailRequest.Subject;
-            message.Body = mailRequest.Body;
-            message.BodyEncoding = Encoding.UTF8;
-            message.IsBodyHtml = true;
-            message.Priority = MailPriority.Normal;
-            SmtpClient client = new SmtpClient();
-            client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(_mailSettings.Mail.Trim(), _mailSettings.Password.Trim(), "resindia.co.in");
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.Host = _mailSettings.Host;
-            client.Port = _mailSettings.Port;
-            client.EnableSsl = true;
-
-            if (mailRequest.Attachments != null)
-            {
-                foreach (var file in mailRequest.Attachments)
-                {
-                    string fileName = file.FileName;
-                    long length = file.Length;
-                    if (length > 0)
-                    {
-                        FileStream fileStream = new FileStream(fileName, FileMode.OpenOrCreate);
-                        byte[] bytes = new byte[length];
-                        fileStream.Read(bytes, 0, (int)file.Length);
-                        message.Attachments.Add(new Attachment(fileStream, fileName));
-
-                    }
-                }
-            }
-
-
-
             try
             {
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(_mailSettings.Mail, _mailSettings.DisplayName);
+                message.To.Add(new MailAddress(mailRequest.ToEmail));
 
+                if (!string.IsNullOrEmpty(_mailSettings.ToCC))
+                {
+                    message.CC.Add(new MailAddress(_mailSettings.ToCC));
+                }
+
+                message.Subject = mailRequest.Subject;
+                message.Body = mailRequest.Body;
+                message.BodyEncoding = Encoding.UTF8;
+                message.IsBodyHtml = true;
+                message.Priority = MailPriority.Normal;
+                SmtpClient client = new SmtpClient();
+                client.UseDefaultCredentials = false;
+                client.Credentials = new System.Net.NetworkCredential(_mailSettings.Mail.Trim(), _mailSettings.Password.Trim(), "resindia.co.in");
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.Host = _mailSettings.Host;
+                client.Port = _mailSettings.Port;
+                client.EnableSsl = true;
+
+                if (mailRequest.Attachments != null)
+                {
+                    foreach (var file in mailRequest.Attachments)
+                    {
+                        string fileName = file.FileName;
+                        long length = file.Length;
+                        if (length > 0)
+                        {
+                            FileStream fileStream = new FileStream(fileName, FileMode.OpenOrCreate);
+                            byte[] bytes = new byte[length];
+                            fileStream.Read(bytes, 0, (int)file.Length);
+                            message.Attachments.Add(new Attachment(fileStream, fileName));
+
+                        }
+                    }
+                }
                 await client.SendMailAsync(message);
 
             }
 
             catch (Exception ex)
             {
-                throw ex;
+                WriteException(mailRequest.SourcePath, ex);               
             }
         }
+
+
+
+
+
+        public void WriteException(string filePath, Exception ex)
+        {
+            string path = Path.Combine(filePath, "Error.txt");
+            try
+            {
+
+                using (StreamWriter writer = new StreamWriter(path, true))
+                {
+                    writer.WriteLine("-----------------------------------------------------------------------------");
+                    writer.WriteLine("Date : " + DateTime.Now.ToString());
+                    writer.WriteLine();
+
+                    while (ex != null)
+                    {
+                        writer.WriteLine(ex.GetType().FullName);
+                        writer.WriteLine("Message : " + ex.Message);
+                        writer.WriteLine("StackTrace : " + ex.StackTrace);
+
+                        ex = ex.InnerException;
+                    }
+                }
+            }
+
+            catch (Exception errorEx)
+            {
+                WriteException(path, errorEx);
+                throw ex;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
