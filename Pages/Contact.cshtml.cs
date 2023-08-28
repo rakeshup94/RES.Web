@@ -39,73 +39,99 @@ namespace RES.Web.Pages
 
         public async Task<IActionResult> OnPostSales()
         {
-            ModelState.Clear();
-            if (TryValidateModel(SaleModel))
+            string wwwRootPath = _hostEnvironment.WebRootPath;
+            try
             {
-                string body = string.Empty;
-                string wwwRootPath = _hostEnvironment.WebRootPath;
-                string path = Path.Combine(wwwRootPath + "/template/", "emailer-query.html");
-                using (StreamReader reader = new StreamReader(path))
+                ModelState.Clear();
+                if (TryValidateModel(SaleModel))
                 {
-                    body = reader.ReadToEnd();
+
+
+
+                    string body = string.Empty;
+
+                    string path = Path.Combine(wwwRootPath + "/template/", "emailer-query.html");
+                    using (StreamReader reader = new StreamReader(path))
+                    {
+                        body = reader.ReadToEnd();
+                    }
+                    body = body.Replace("{Name}", SaleModel.Name);
+                    body = body.Replace("{Email}", SaleModel.Email);
+                    body = body.Replace("{PhoneNo}", SaleModel.PhoneNo);
+                    body = body.Replace("{Message}", SaleModel.Message);
+
+
+                    MailRequest _mail = new MailRequest();
+                    _mail.Subject = "Sales Query";
+                    _mail.ToEmail = _mailSettings.Mail;
+                    _mail.Body = body;
+                    _mail.SourcePath = _hostEnvironment.WebRootPath + "/Exception/";
+
+                    await mailSrv.SendEmailAsync(_mail);
+                    await ThanksMail(SaleModel.Name, SaleModel.Email);
+                    return RedirectToPage("/Thanks");
+
+
+
+
+
                 }
-                body = body.Replace("{Name}", SaleModel.Name);
-                body = body.Replace("{Email}", SaleModel.Email);
-                body = body.Replace("{PhoneNo}", SaleModel.PhoneNo);
-                body = body.Replace("{Message}", SaleModel.Message);
-
-
-                MailRequest _mail = new MailRequest();
-                _mail.Subject = "Sales Query";
-                _mail.ToEmail = _mailSettings.Mail;
-                _mail.Body = body;
-
-
-
-                _mail.SourcePath = _hostEnvironment.WebRootPath + "/Exception/";
-
-                await mailSrv.SendEmailAsync(_mail);
-                await ThanksMail(SaleModel.Name, SaleModel.Email);
-
+                else
+                {
+                    return Page();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return Page();
+                string path = _hostEnvironment.WebRootPath + "/Exception/";
+                mailSrv.WriteException(path, ex);
+                return RedirectToPage("/Error");
             }
 
-            return RedirectToPage("/Thanks");
+
+
         }
 
         public async Task<IActionResult> OnPostQuery()
         {
-            ModelState.Clear();
-            if (TryValidateModel(QueryModel))
+            string wwwRootPath = _hostEnvironment.WebRootPath;
+            try
             {
-                string body = string.Empty;
-                string wwwRootPath = _hostEnvironment.WebRootPath;
-                string path = Path.Combine(wwwRootPath + "/template/", "emailer-query.html");
-                using (StreamReader reader = new StreamReader(path))
+                ModelState.Clear();
+                if (TryValidateModel(QueryModel))
                 {
-                    body = reader.ReadToEnd();
-                }
-                body = body.Replace("{Name}", QueryModel.Name);
-                body = body.Replace("{Email}", QueryModel.Email);
-                body = body.Replace("{PhoneNo}", QueryModel.PhoneNo);
-                body = body.Replace("{Message}", QueryModel.Message);
+                    string body = string.Empty;
 
-                MailRequest _mail = new MailRequest();
-                _mail.Subject = "Query";
-                _mail.ToEmail = _mailSettings.Mail;
-                _mail.Body = body;
-                await mailSrv.SendEmailAsync(_mail);
-                await ThanksMail(QueryModel.Name, QueryModel.Email);
+                    string path = Path.Combine(wwwRootPath + "/template/", "emailer-query.html");
+                    using (StreamReader reader = new StreamReader(path))
+                    {
+                        body = reader.ReadToEnd();
+                    }
+                    body = body.Replace("{Name}", QueryModel.Name);
+                    body = body.Replace("{Email}", QueryModel.Email);
+                    body = body.Replace("{PhoneNo}", QueryModel.PhoneNo);
+                    body = body.Replace("{Message}", QueryModel.Message);
+
+                    MailRequest _mail = new MailRequest();
+                    _mail.Subject = "Query";
+                    _mail.ToEmail = _mailSettings.Mail;
+                    _mail.Body = body;
+                    await mailSrv.SendEmailAsync(_mail);
+                    await ThanksMail(QueryModel.Name, QueryModel.Email);
+                    return RedirectToPage("/Thanks");
+                }
+                else
+                {
+                    return Page();
+                }
+
             }
-            else
+            catch (Exception ex)
             {
+                string path = _hostEnvironment.WebRootPath + "/Exception/";
+                mailSrv.WriteException(path, ex);
                 return Page();
             }
-
-            return RedirectToPage("/Thanks");
         }
 
 

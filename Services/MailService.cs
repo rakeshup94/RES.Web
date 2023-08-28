@@ -29,6 +29,9 @@ namespace RES.Web.Services
         {
             try
             {
+                //int x = 0; int y = 0;
+                //int ss = 10 / y;
+
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress(_mailSettings.Mail, _mailSettings.DisplayName);
                 message.To.Add(new MailAddress(mailRequest.ToEmail));
@@ -73,7 +76,7 @@ namespace RES.Web.Services
 
             catch (Exception ex)
             {
-                WriteException(mailRequest.SourcePath, ex);               
+                throw ex;
             }
         }
 
@@ -84,30 +87,20 @@ namespace RES.Web.Services
         public void WriteException(string filePath, Exception ex)
         {
             string path = Path.Combine(filePath, "Error.txt");
-            try
+            using (StreamWriter writer = new StreamWriter(path, true))
             {
+                writer.WriteLine("-----------------------------------------------------------------------------");
+                writer.WriteLine("Date : " + DateTime.Now.ToString());
+                writer.WriteLine();
 
-                using (StreamWriter writer = new StreamWriter(path, true))
+                while (ex != null)
                 {
-                    writer.WriteLine("-----------------------------------------------------------------------------");
-                    writer.WriteLine("Date : " + DateTime.Now.ToString());
-                    writer.WriteLine();
+                    writer.WriteLine(ex.GetType().FullName);
+                    writer.WriteLine("Message : " + ex.Message);
+                    writer.WriteLine("StackTrace : " + ex.StackTrace);
 
-                    while (ex != null)
-                    {
-                        writer.WriteLine(ex.GetType().FullName);
-                        writer.WriteLine("Message : " + ex.Message);
-                        writer.WriteLine("StackTrace : " + ex.StackTrace);
-
-                        ex = ex.InnerException;
-                    }
+                    ex = ex.InnerException;
                 }
-            }
-
-            catch (Exception errorEx)
-            {
-                WriteException(path, errorEx);
-                throw ex;
             }
 
         }

@@ -1,14 +1,1 @@
-﻿-----------------------------------------------------------------------------
-Date : 28-08-2023 11.13.52 AM
-
-System.Net.Mail.SmtpException
-Message : Error in processing. The server response was: 5.7.3 STARTTLS is required to send mail [PN2PR01CA0207.INDPRD01.PROD.OUTLOOK.COM 2023-08-28T05:43:52.254Z 08DBA5E3F3874906]
-StackTrace :    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
-   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
-   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
-   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 70
+﻿
