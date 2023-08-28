@@ -22,6 +22,11 @@ namespace RES.Web.Models
         public string Host { get; set; }
         public int Port { get; set; }
         public string ToCC { get; set; }
+
+
+        public bool SMTPAuthentication { get; set; }
+        public bool SSL { get; set; }
+        
     }
 
 }

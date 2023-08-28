@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using RES.Web.Models;
 using RES.Web.Services.IServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -41,46 +42,58 @@ namespace RES.Web.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            ModelState.Clear();
-            if (TryValidateModel(CandidateModel))
+
+            try
             {
-
-                MailRequest _mail = new MailRequest();
-                if (CandidateModel.Resume != null)
+                ModelState.Clear();
+                if (TryValidateModel(CandidateModel))
                 {
-                    _mail.Attachments = new List<IFormFile>();
-                    _mail.Attachments.Add(CandidateModel.Resume);
+
+                    MailRequest _mail = new MailRequest();
+                    if (CandidateModel.Resume != null)
+                    {
+                        _mail.Attachments = new List<IFormFile>();
+                        _mail.Attachments.Add(CandidateModel.Resume);
+                    }
+                    string body = string.Empty;
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string path = Path.Combine(wwwRootPath + "/template/", "emailer-career.html");
+                    using (StreamReader reader = new StreamReader(path))
+                    {
+                        body = reader.ReadToEnd();
+                    }
+                    body = body.Replace("{Department}", CandidateModel.Department);
+                    body = body.Replace("{Name}", CandidateModel.Name);
+                    body = body.Replace("{Email}", CandidateModel.Email);
+                    body = body.Replace("{PhoneNo}", CandidateModel.PhoneNo);
+                    body = body.Replace("{Experience}", CandidateModel.Experience);
+                    body = body.Replace("{Education}", CandidateModel.Education);
+                    body = body.Replace("{Project}", CandidateModel.Project);
+                    body = body.Replace("{Reference}", CandidateModel.Reference);
+
+
+                    _mail.Subject = "For  Career";
+                    //_mail.ToEmail = "pardeepkamboj07@gmail.com";
+                    _mail.ToEmail = "hr@resindia.co.in";
+                    _mail.Body = body;
+                    await mailSrv.SendEmailAsync(_mail);
+                    await ThanksMail(CandidateModel.Name, CandidateModel.Email);
+
                 }
-                string body = string.Empty;
-                string wwwRootPath = _hostEnvironment.WebRootPath;
-                string path = Path.Combine(wwwRootPath + "/template/", "emailer-career.html");
-                using (StreamReader reader = new StreamReader(path))
+                else
                 {
-                    body = reader.ReadToEnd();
+                    return Page();
                 }
-                body = body.Replace("{Department}", CandidateModel.Department);
-                body = body.Replace("{Name}", CandidateModel.Name);
-                body = body.Replace("{Email}", CandidateModel.Email);
-                body = body.Replace("{PhoneNo}", CandidateModel.PhoneNo);
-                body = body.Replace("{Experience}", CandidateModel.Experience);
-                body = body.Replace("{Education}", CandidateModel.Education);
-                body = body.Replace("{Project}", CandidateModel.Project);
-                body = body.Replace("{Reference}", CandidateModel.Reference);
-
-
-                _mail.Subject = "For  Career";
-                 //_mail.ToEmail = "pardeepkamboj07@gmail.com";
-                _mail.ToEmail = "hr@resindia.co.in";
-                _mail.Body = body;
-                await mailSrv.SendEmailAsync(_mail);
-                await ThanksMail(CandidateModel.Name, CandidateModel.Email);
+                return RedirectToPage("/Thanks");
 
             }
-            else
+            catch (Exception ex)
             {
-                return Page();
+                string path = _hostEnvironment.WebRootPath + "/Exception/";
+                mailSrv.WriteException(path, ex);
+                return RedirectToPage("/Error");
             }
-            return RedirectToPage("/Thanks");
+
         }
 
 

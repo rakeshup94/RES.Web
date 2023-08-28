@@ -51,7 +51,10 @@ namespace RES.Web.Services
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.Host = _mailSettings.Host;
                 client.Port = _mailSettings.Port;
-                client.EnableSsl = true;
+
+                
+
+                client.EnableSsl = _mailSettings.SSL;
 
                 if (mailRequest.Attachments != null)
                 {
