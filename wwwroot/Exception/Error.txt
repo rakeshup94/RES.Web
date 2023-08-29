@@ -97,3 +97,55 @@ StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(
    at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
    at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
    at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
+-----------------------------------------------------------------------------
+Date : 29-08-2023 15:25:41
+
+System.Net.Mail.SmtpException
+Message : Failure sending mail.
+StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Rakesh\DK\RES.Web\Services\MailService.cs:line 81
+   at RES.Web.Pages.careerModel.OnPostAsync() in D:\Rakesh\DK\RES.Web\Pages\career.cshtml.cs:line 75
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
+Message : An attempt was made to access a socket in a way forbidden by its access permissions. [::ffff:132.148.52.3]:25
+StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
+-----------------------------------------------------------------------------
+Date : 29-08-2023 15:33:30
+
+System.Net.Mail.SmtpException
+Message : Failure sending mail.
+StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Rakesh\DK\RES.Web\Services\MailService.cs:line 83
+   at RES.Web.Pages.careerModel.OnPostAsync() in D:\Rakesh\DK\RES.Web\Pages\career.cshtml.cs:line 77
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
+Message : An attempt was made to access a socket in a way forbidden by its access permissions. [::ffff:132.148.52.3]:25
+StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)

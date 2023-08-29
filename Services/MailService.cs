@@ -29,7 +29,7 @@ namespace RES.Web.Services
         {
             try
             {
-          
+
 
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress(_mailSettings.Mail, _mailSettings.DisplayName);
@@ -45,12 +45,13 @@ namespace RES.Web.Services
                 message.BodyEncoding = Encoding.UTF8;
                 message.IsBodyHtml = true;
                 message.Priority = MailPriority.Normal;
+
                 SmtpClient client = new SmtpClient();
 
                 //client.Credentials = new System.Net.NetworkCredential(_mailSettings.Mail.Trim(), _mailSettings.Password.Trim(), "resindia.co.in");
                 //client.DeliveryMethod = SmtpDeliveryMethod.Network;
-
                 //client.UseDefaultCredentials = false;
+
                 client.Host = _mailSettings.Host;
                 client.Port = _mailSettings.Port;
                 client.EnableSsl = _mailSettings.EnableSsl;
@@ -59,10 +60,12 @@ namespace RES.Web.Services
                 {
                     foreach (var file in mailRequest.Attachments)
                     {
-                        string fileName = file.FileName;
+                        string fileName = Path.Combine(mailRequest.SourcePath, file.FileName);
                         long length = file.Length;
                         if (length > 0)
                         {
+
+
                             FileStream fileStream = new FileStream(fileName, FileMode.OpenOrCreate);
                             byte[] bytes = new byte[length];
                             fileStream.Read(bytes, 0, (int)file.Length);

@@ -36,10 +36,6 @@ namespace RES.Web.Pages
             this._hostEnvironment = hostEnvironment;
         }
 
-
-
-
-
         public async Task<IActionResult> OnPostAsync()
         {
 
@@ -50,6 +46,8 @@ namespace RES.Web.Pages
                 {
 
                     MailRequest _mail = new MailRequest();
+
+                    _mail.SourcePath = _hostEnvironment.WebRootPath + "/Upload/";
                     if (CandidateModel.Resume != null)
                     {
                         _mail.Attachments = new List<IFormFile>();
