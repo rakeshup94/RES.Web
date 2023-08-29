@@ -46,15 +46,14 @@ namespace RES.Web.Services
                 message.IsBodyHtml = true;
                 message.Priority = MailPriority.Normal;
                 SmtpClient client = new SmtpClient();
-                client.UseDefaultCredentials = false;
-                client.Credentials = new System.Net.NetworkCredential(_mailSettings.Mail.Trim(), _mailSettings.Password.Trim(), "resindia.co.in");
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                //client.Credentials = new System.Net.NetworkCredential(_mailSettings.Mail.Trim(), _mailSettings.Password.Trim(), "resindia.co.in");
+                //client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                //client.UseDefaultCredentials = false;
                 client.Host = _mailSettings.Host;
                 client.Port = _mailSettings.Port;
-
-                
-
-                client.EnableSsl = _mailSettings.SSL;
+                client.EnableSsl = _mailSettings.EnableSsl;
 
                 if (mailRequest.Attachments != null)
                 {

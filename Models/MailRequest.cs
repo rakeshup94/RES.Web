@@ -11,7 +11,6 @@ namespace RES.Web.Models
         public string Subject { get; set; }
         public string Body { get; set; }
         public List<IFormFile> Attachments { get; set; }
-
         public string SourcePath { get; set; }
     }
     public class MailSettings
@@ -21,11 +20,8 @@ namespace RES.Web.Models
         public string Password { get; set; }
         public string Host { get; set; }
         public int Port { get; set; }
-        public string ToCC { get; set; }
-
-
-        public bool SMTPAuthentication { get; set; }
-        public bool SSL { get; set; }
+        public string ToCC { get; set; }     
+        public bool EnableSsl { get; set; }
         
     }
 
