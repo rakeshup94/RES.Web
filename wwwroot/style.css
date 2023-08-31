@@ -2684,17 +2684,17 @@ body.page #main-content {
 }
 /* BACKGROUND IMG HOME */
 .service {
-  background-image: url("img/shortcode/service/bg-service.jpg");
+  background-image: url("img/shortcode/service/bg-service.webp");
   background-size: cover; 
   padding: 0 0 303px 0;
 }
 .row-experiences {
-  background-image: url("img/bg/bg-experience.jpg");
+  background-image: url("img/bg/bg-experience.webp");
   background-size: cover;
   padding: 0 0 443px 0;
 }
 .row-request {
-  background-image: url("img/shortcode/request/bg-request.jpg");
+  background-image: url("img/shortcode/request/bg-request.webp");
   background-size: cover;
 }
 .style-2 .item.acticle .img-overlay {
