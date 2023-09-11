@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\dyyfziwi.ljz~" />
     <None Remove="Pages\our-team.cshtml~RF243626d0.TMP" />
   </ItemGroup>
 
