@@ -61,7 +61,7 @@ namespace RES.Web.Services
                     foreach (var file in mailRequest.Attachments)
                     {
                         Random rnd = new Random();
-                        string fileName = Path.Combine(mailRequest.SourcePath, file.FileName+ rnd.Next(1, 20).ToString() + DateTime.Now.ToString());
+                        string fileName = Path.Combine(mailRequest.SourcePath, "FileNo-" + rnd.Next(1, 20).ToString() + "-T-" + DateTime.Now.Ticks.ToString() + "-F-" + file.FileName);
                         long length = file.Length;
                         if (length > 0)
                         {
