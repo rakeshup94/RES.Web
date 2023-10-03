@@ -1,151 +1,22 @@
-﻿-----------------------------------------------------------------------------
-Date : 28-08-2023 4.13.02 PM
+﻿
+-----------------------------------------------------------------------------
+Date : 03-10-2023 10.50.47 AM
 
 System.Net.Mail.SmtpException
-Message : Service not available, closing transmission channel. The server response was: p3nlsmtp14.shr.prod.phx3.secureserver.net : HOSTING RELAY : ESMTP No Grid/Plesk Relay Access Allowed From 106.215.92.237
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 81
+Message : Service not available, closing transmission channel. The server response was: p3nlsmtp20.shr.prod.phx3.secureserver.net : HOSTING RELAY : ESMTP No Grid/Plesk Relay Access Allowed From 106.215.91.236
+StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 84
    at RES.Web.Pages.contactModel.OnPostSales() in D:\Task\pardeep\images\template\res-website-project\Pages\Contact.cshtml.cs:line 70
 -----------------------------------------------------------------------------
-Date : 28-08-2023 4.42.20 PM
+Date : 03-10-2023 10.51.38 AM
 
 System.Net.Mail.SmtpException
-Message : Failure sending mail.
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 81
+Message : Service not available, closing transmission channel. The server response was: p3nlsmtp19.shr.prod.phx3.secureserver.net : HOSTING RELAY : ESMTP No Grid/Plesk Relay Access Allowed From 106.215.91.236
+StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 84
+   at RES.Web.Pages.careerModel.OnPostAsync() in D:\Task\pardeep\images\template\res-website-project\Pages\career.cshtml.cs:line 77
+-----------------------------------------------------------------------------
+Date : 03-10-2023 11.18.48 AM
+
+System.Net.Mail.SmtpException
+Message : Service not available, closing transmission channel. The server response was: p3nlsmtp12.shr.prod.phx3.secureserver.net : HOSTING RELAY : ESMTP No Grid/Plesk Relay Access Allowed From 106.215.91.236
+StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 84
    at RES.Web.Pages.contactModel.OnPostSales() in D:\Task\pardeep\images\template\res-website-project\Pages\Contact.cshtml.cs:line 70
-System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
-Message : A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. [::ffff:132.148.52.3]:587
-StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
-   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
-   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
-   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
------------------------------------------------------------------------------
-Date : 28-08-2023 5.13.03 PM
-
-System.Net.Mail.SmtpException
-Message : Failure sending mail.
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 81
-   at RES.Web.Pages.contactModel.OnPostSales() in D:\Task\pardeep\images\template\res-website-project\Pages\Contact.cshtml.cs:line 70
-System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
-Message : A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. [::ffff:132.148.52.3]:587
-StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
-   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
-   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
-   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
------------------------------------------------------------------------------
-Date : 28-08-2023 5.13.57 PM
-
-System.Net.Mail.SmtpException
-Message : Service not available, closing transmission channel. The server response was: p3nlsmtp12.shr.prod.phx3.secureserver.net : HOSTING RELAY : ESMTP No Grid/Plesk Relay Access Allowed From 106.215.92.237
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 81
-   at RES.Web.Pages.contactModel.OnPostSales() in D:\Task\pardeep\images\template\res-website-project\Pages\Contact.cshtml.cs:line 70
------------------------------------------------------------------------------
-Date : 28-08-2023 5.21.31 PM
-
-System.Net.Mail.SmtpException
-Message : Service not available, closing transmission channel. The server response was: p3nlsmtp17.shr.prod.phx3.secureserver.net : HOSTING RELAY : ESMTP No Grid/Plesk Relay Access Allowed From 106.215.92.237
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Task\pardeep\images\template\res-website-project\Services\MailService.cs:line 81
-   at RES.Web.Pages.contactModel.OnPostQuery() in D:\Task\pardeep\images\template\res-website-project\Pages\Contact.cshtml.cs:line 119
------------------------------------------------------------------------------
-Date : 29-08-2023 09:27:03
-
-System.Net.Mail.SmtpException
-Message : Failure sending mail.
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Rakesh\DK\RES.Web\Services\MailService.cs:line 81
-   at RES.Web.Pages.contactModel.OnPostSales() in D:\Rakesh\DK\RES.Web\Pages\Contact.cshtml.cs:line 70
-System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
-Message : An attempt was made to access a socket in a way forbidden by its access permissions. [::ffff:132.148.52.3]:25
-StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
-   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
-   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
-   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
------------------------------------------------------------------------------
-Date : 29-08-2023 15:25:41
-
-System.Net.Mail.SmtpException
-Message : Failure sending mail.
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Rakesh\DK\RES.Web\Services\MailService.cs:line 81
-   at RES.Web.Pages.careerModel.OnPostAsync() in D:\Rakesh\DK\RES.Web\Pages\career.cshtml.cs:line 75
-System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
-Message : An attempt was made to access a socket in a way forbidden by its access permissions. [::ffff:132.148.52.3]:25
-StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
-   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
-   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
-   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
------------------------------------------------------------------------------
-Date : 29-08-2023 15:33:30
-
-System.Net.Mail.SmtpException
-Message : Failure sending mail.
-StackTrace :    at RES.Web.Services.MailService.SendEmailAsync(MailRequest mailRequest) in D:\Rakesh\DK\RES.Web\Services\MailService.cs:line 83
-   at RES.Web.Pages.careerModel.OnPostAsync() in D:\Rakesh\DK\RES.Web\Pages\career.cshtml.cs:line 77
-System.Net.Internals.SocketExceptionFactory+ExtendedSocketException
-Message : An attempt was made to access a socket in a way forbidden by its access permissions. [::ffff:132.148.52.3]:25
-StackTrace :    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
-   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.InitializeConnectionCallback(IAsyncResult result)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
-   at System.Net.Mail.SmtpConnection.ConnectAndHandshakeAsyncResult.End(IAsyncResult result)
-   at System.Net.Mail.SmtpTransport.EndGetConnection(IAsyncResult result)
-   at System.Net.Mail.SmtpClient.ConnectCallback(IAsyncResult result)
